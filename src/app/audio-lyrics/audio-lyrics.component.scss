@@ -1,0 +1,13 @@
+.lyrics-canvas {
+  width: 100vw !important;  
+  max-width: 90vw !important;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: -8px 0px 20px rgba(110, 71, 201, 0.2);
+}
+
+@media (max-width: 576px) {
+  .lyrics-canvas {
+    width: 100% !important;
+  }
+}

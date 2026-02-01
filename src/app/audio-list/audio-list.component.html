@@ -1,0 +1,34 @@
+  
+<div class="audio-list">
+  <ul>
+    <li *ngFor="let audio of audioList">
+      <div class="audio-card">
+        <div class="audio-left">
+          <audio #player controls 
+          [src]="'http://localhost:5000/audio/'+ audio._id" 
+          (play)="playAudio(rightCanvas, audio?._id)"
+          (timeupdate)="onTimeUpdate(player.currentTime)">
+          </audio>
+        </div>
+        <button class="delete-icon" title="Delete audio" (click)="onDelete(audio._id)">
+          🗑
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<ng-template #rightCanvas let-offcanvas>
+  <div class="canvas-wrapper">
+    <button
+        type="button"
+        class="btn btn-light rounded-circle shadow-sm close-btn"
+        aria-label="Close"
+        (click)="offcanvas.dismiss()">
+        ✕
+      </button>
+      <app-audio-lyrics></app-audio-lyrics>
+  </div>
+
+</ng-template>

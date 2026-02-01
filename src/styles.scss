@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+/* ----- GUARANTEED FIX ----- */
+
+ngb-offcanvas-panel.offcanvas {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(550px, 95vw);   /* responsive */
+  z-index: 99999 !important;
+  transform: translateX(0);  /* forces it to come from the side */
+}
+
+ngb-offcanvas-backdrop {
+  z-index: 99998 !important;
+}

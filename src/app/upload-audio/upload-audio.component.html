@@ -1,0 +1,33 @@
+<div class="audio">
+  <div class="upload-container">
+    <h2>🎙 Upload Podcast</h2>
+
+    <!-- Hidden File Input -->
+    <input
+      type="file"
+      id="audioUpload"
+      accept="audio/*"
+      (change)="onFileSelected($event)"
+      hidden
+    />
+
+    <!-- Funky Upload Button -->
+    <label for="audioUpload" class="funky-upload-btn">
+      <span *ngIf="!selectedFile">🎵 Choose Audio</span>
+      <span *ngIf="selectedFile">✔ {{ selectedFile.name }}</span>
+    </label>
+
+    <!-- Upload Action Button -->
+    <button
+      class="upload-action-btn"
+      [disabled]="!selectedFile"
+      (click)="onUpload()"
+    >
+      🚀 Upload Now
+    </button>
+
+    <p class="upload-message" *ngIf="uploadMessage">
+      {{ uploadMessage }}
+    </p>
+  </div>
+</div>
